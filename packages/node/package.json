@@ -1,12 +1,13 @@
 {
-  "name": "@beam-australia/react-env",
-  "version": "3.0.8",
+  "name": "@ma/react-env",
+  "version": "4.0.0",
   "author": "andrewmclagan",
   "license": "MIT",
   "publishConfig": {
-    "access": "public"
+    "always-auth": true,
+    "registry": "https://packagecloud.io/meilleursagents/ma-prod/npm/"
   },
-  "repository": "http://github.com/beam-australia/react-env",
+  "repository": "http://github.com/MeilleursAgents/react-env",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types.d.ts",
@@ -16,6 +17,8 @@
   "scripts": {
     "test": "jest",
     "test:ci": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "prepublishOnly": "npm install && npm run build",
+    "postpublish": "git push --tags && git push",
     "build": "rollup -c",
     "start": "rollup -c -w"
   },
