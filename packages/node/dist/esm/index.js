@@ -1,5 +1,3 @@
-'use strict';
-
 function isBrowser() {
   return Boolean(typeof window !== "undefined" && window.__ENV);
 }
@@ -26,4 +24,4 @@ function env() {
   return key.length ? process.env[safeKey] : getFiltered();
 }
 
-module.exports = env;
+export default env;
