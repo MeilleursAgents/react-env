@@ -1,4 +1,4 @@
-declare module "@beam-australia/react-env" {
+declare module "@ma/react-env" {
     function env(key: string): string
     export = env
 }
